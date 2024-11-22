@@ -1,6 +1,7 @@
 from enum import Enum
 from kivy.utils import get_color_from_hex
 
+
 class Themes(Enum):
     LIGHT = 1
     DARK = 2
