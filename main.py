@@ -8,7 +8,7 @@ class LoginWindow(Screen):
     pass
 
 
-class RegistryWindow(Screen):
+class RegistrationWindow(Screen):
     pass
 
 
@@ -25,8 +25,7 @@ class DemoApp(MDApp):
 
     def build(self):
         Builder.load_file("login.kv")
-        Builder.load_file("registry.kv")
-        Builder.load_file("windowmanager.kv")
+        Builder.load_file("registration.kv")
         return Builder.load_file("windowmanager.kv")
 
     def toggle_theme(self):
@@ -35,9 +34,9 @@ class DemoApp(MDApp):
         self.button_color = self.current_theme.button_color()
         print(f"Current Theme: {self.theme_cls.theme_style}")
 
-    def switch_to_registry(self):
+    def switch_to_registration(self):
         self.root.transition = SlideTransition(direction="left")
-        self.root.current = "registry"
+        self.root.current = "registration"
 
     def switch_to_login(self):
         self.root.transition = SlideTransition(direction="right")
