@@ -1,0 +1,13 @@
+<RegistryWindow>:
+    name: "registry"
+    Screen:
+        BoxLayout:
+            orientation: "vertical"
+            spacing: "10dp"
+            MDLabel:
+                text: "Registry Page"
+                halign: "center"
+            MDRaisedButton:
+                text: "Back to Login"
+                pos_hint: {"center_x": 0.5}
+                on_press: app.switch_to_login()

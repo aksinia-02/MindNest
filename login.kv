@@ -1,5 +1,7 @@
-Screen:
-    AnchorLayoutExample
+<LoginWindow>:
+    name: "login"
+    Screen:
+        AnchorLayoutExample
 
 <AnchorLayoutExample@AnchorLayout>:
     anchor_y: "top"
@@ -70,6 +72,7 @@ Screen:
                     text: "New User"
                     font_size: 14
                     radius: [20, 20, 20, 20]
+                    on_press: app.switch_to_registry()
 
             Widget:
                 size_hint_y: None
