@@ -1,4 +1,4 @@
-<RegistrationWindow>:
+<RegistrationWindow@Screen>:
     name: "registration"
     Screen:
         BoxLayout:
@@ -10,4 +10,4 @@
             MDRaisedButton:
                 text: "Back to Login"
                 pos_hint: {"center_x": 0.5}
-                on_press: app.switch_to_login()
+                on_press: app.define_direction_switch_page("login")

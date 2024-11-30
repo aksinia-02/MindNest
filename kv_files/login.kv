@@ -1,0 +1,87 @@
+<LoginWindow@Screen>:
+    name: "login"
+    id: login
+    Screen:
+        AnchorLayout:
+            anchor_y: "top"
+            anchor_x: "right"
+            padding: [40, 40, 40, 40]
+            MDIconButton:
+                icon: "brightness-4"
+                pos_hint: {"right": 1, "top": 1}
+                on_press: app.toggle_theme()
+            BoxLayout:
+                orientation: "vertical"
+                spacing: "10dp"
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                MDCard:
+                    size_hint: 0.4, None
+                    height: 500
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                    elevation: 10
+                    padding: 25
+                    spacing: 25
+                    orientation: 'vertical'
+
+                    MDLabel:
+                        id: welcome_label
+                        text: "Welcome to Mind Nest"
+                        font_size: 25
+                        halign: 'center'
+                        size_hint_y: None
+                        height: self.texture_size[1]
+                        padding_y: 15
+
+                    MDTextField:
+                        id: user_name
+                        hint_text: "username"
+                        icon_right: "account"
+                        size_hint_x: None
+                        width: 250
+                        font_size: 18
+                        pos_hint: {"center_x": 0.5}
+                        helper_text_mode: "on_error"
+
+                    MDTextField:
+                        id: password
+                        hint_text: "password"
+                        icon_right: "key-variant"
+                        size_hint_x: None
+                        width: 250
+                        font_size: 18
+                        pos_hint: {"center_x": 0.5}
+                        password: True
+                        password_mask: "•"
+                        helper_text_mode: "on_error"
+
+
+                    BoxLayout:
+                        orientation: "horizontal"
+                        spacing: "80dp"
+                        size_hint_y: None
+                        height: "50dp"
+                        pos_hint: {"center_x": 0.5}
+                        padding: [30, 10, 30, 10]
+
+                        MDFlatButton:
+                            text: "Log In"
+                            font_size: 14
+                            pos_hint: {"left": 0.1, "top": 1}
+                            radius: [20, 20, 20, 20]
+                            on_press: app.log_in()
+
+                        MDFlatButton:
+                            text: "New User"
+                            font_size: 14
+                            radius: [20, 20, 20, 20]
+                            on_press: app.define_direction_switch_page("start")
+
+                    Widget:
+                        size_hint_y: None
+                        height: 30
+
+
+                Widget:
+                    size_hint_y: None
+                    height: 80
+
