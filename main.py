@@ -1,11 +1,10 @@
-from kivy.clock import Clock
 from kivy.lang import Builder
 from kivymd.app import MDApp
 
 import Pages
 import Themes
-import user
-from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
+from domain import User
+from kivy.uix.screenmanager import ScreenManager, SlideTransition
 
 
 class WindowManager(ScreenManager):
@@ -15,18 +14,18 @@ class WindowManager(ScreenManager):
 class DemoApp(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.user = user.User()
+        self.user = User()
         self.current_page = Pages.Pages.START
         self.current_theme = Themes.Themes.DARK
         self.theme_cls.theme_style = self.current_theme.main_color()
         self.button_color = self.current_theme.button_color()
 
     def build(self):
-        Builder.load_file("kv_files/start.kv")
-        Builder.load_file("kv_files/login.kv")
-        Builder.load_file("kv_files/registration.kv")
-        Builder.load_file("kv_files/windowmanager.kv")
-        Builder.load_file("kv_files/home.kv")
+        Builder.load_file("frontend/kv_files/start.kv")
+        Builder.load_file("frontend/kv_files/login.kv")
+        Builder.load_file("frontend/kv_files/registration.kv")
+        Builder.load_file("frontend/kv_files/windowmanager.kv")
+        Builder.load_file("frontend/kv_files/home.kv")
 
         wm = WindowManager()
         if self.user.new_user():
@@ -100,7 +99,6 @@ class DemoApp(MDApp):
             error_text_field_password.helper_text = "Password is incorrect"
             return False
         return True
-
 
 
 DemoApp().run()
